@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Portfolio - Cutting Room</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- LANGUAGE TOGGLE BUTTON (Top Right Corner) -->
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- SIDE NAVIGATION MENU (Collapses/Expands on Hover) -->
+    <nav class="side-menu">
+        <div class="menu-items">
+            <a class="menu-item active" data-page="landing">
+                <span class="menu-icon">🎬</span>
+                <span class="menu-text" data-en="Home" data-es="Inicio">Home</span>
+            </a>
+            <a class="menu-item" data-page="projects">
+                <span class="menu-icon">📽️</span>
+                <span class="menu-text" data-en="Projects" data-es="Proyectos">Projects</span>
+            </a>
+            <a class="menu-item" data-page="about">
+                <span class="menu-icon">✂️</span>
+                <span class="menu-text" data-en="About" data-es="Acerca">About</span>
+            </a>
+            <a class="menu-item" data-page="contact">
+                <span class="menu-icon">📞</span>
+                <span class="menu-text" data-en="Contact" data-es="Contacto">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="content">
+        
+        <!-- ========== LANDING PAGE ========== -->
+        <div id="landing" class="page active">
+            <div class="landing">
+                <div class="film-strip top"></div>
+                <div class="hero-text">
+                    <h1 class="hero-title">THE CUTTING ROOM</h1>
+                    <p class="hero-subtitle" data-en="Video Editor & Visual Storyteller" data-es="Editor de Video & Narrador Visual">Video Editor & Visual Storyteller</p>
+                    <div class="reel-counter">[ REEL: 001 | FRAME: INFINITE ]</div>
+                </div>
+                <div class="film-strip bottom"></div>
+            </div>
+        </div>
+
+        <!-- ========== PROJECTS PAGE ========== -->
+        <div id="projects" class="page">
+            <div class="projects-container">
+                <h2 class="section-title" data-en="Archive" data-es="Archivo">Archive</h2>
+                
+                <!-- Category Filter Buttons -->
+                <div class="category-filter">
+                    <button class="filter-btn active" data-filter="all" data-en="All Projects" data-es="Todos los Proyectos">All Projects</button>
+                    <button class="filter-btn" data-filter="documentary" data-en="Documentaries" data-es="Documentales">Documentaries</button>
+                    <button class="filter-btn" data-filter="ad" data-en="Ads" data-es="Spots">Ads</button>
+                    <button class="filter-btn" data-filter="promo" data-en="Promos" data-es="Promos">Promos</button>
+                    <button class="filter-btn" data-filter="short" data-en="Short Films" data-es="Cortometrajes">Short Films</button>
+                </div>
+
+                <!-- Projects Grid (Filled by JavaScript) -->
+                <div class="projects-grid" id="projectsGrid"></div>
+            </div>
+        </div>
+
+        <!-- ========== ABOUT PAGE ========== -->
+        <div id="about" class="page">
+            <div class="about-container">
+                <h2 class="section-title" data-en="The Editor" data-es="El Editor">The Editor</h2>
+                
+                <div class="about-content">
+                    <!-- About Text -->
+                    <div class="about-text">
+                        <p data-en="Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives." data-es="Welcome to the cutting room. Aquí es donde las historias se tallan plano a plano y el material en bruto se convierte en narrativa que funciona.">Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives.</p>
+                        
+                        <p data-en="With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content." data-es="Con 9 años editando, doy vida a historias que van del documental al contenido comercial de alto ritmo.">With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content.</p>
+                        
+                        <p data-en="I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams." data-es="Hago que promos, spots y piezas documentales funcionen en on-air, VOD y social (16:9 · 1:1 · 9:16) con entrega broadcast y deadlines cumplidos. Trabajo con brief claro, organización de media y checklist de QC para que el master llegue a la primera, sosteniendo paquetes mensuales con retrabajos mínimos y coordinación fluida con creativos, tráfico y post.">I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams.</p>
+
+                        <p data-en="Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote)." data-es="Crédito reciente: promos y episodios de franquicias de TV y spots para marcas globales. Disponible en Madrid (presencial, híbrido o remoto).">Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote).</p>
+                    </div>
+                    
+                    <!-- Skills Box -->
+                    <div class="skills-box">
+                        <h3 class="skills-title" data-en="Technical Arsenal" data-es="Arsenal Técnico">Technical Arsenal</h3>
+                        <div class="skill-item">Adobe Premiere Pro</div>
+                        <div class="skill-item">DaVinci Resolve</div>
+                        <div class="skill-item">After Effects</div>
+                        <div class="skill-item">Final Cut Pro</div>
+                        <div class="skill-item" data-en="Color Grading" data-es="Corrección de Color">Color Grading</div>
+                        <div class="skill-item" data-en="Sound Design" data-es="Diseño de Sonido">Sound Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== CONTACT PAGE ========== -->
+        <div id="contact" class="page">
+            <div class="contact-container">
+                <h2 class="section-title" data-en="Get In Touch" data-es="Contacto">Get In Touch</h2>
+                
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" data-en="Name" data-es="Nombre">Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" data-en="Project Type" data-es="Tipo de Proyecto">Project Type</label>
+                        <input type="text" class="form-input" data-placeholder-en="Documentary, Ad, Promo, etc." data-placeholder-es="Documental, Spot, Promo, etc." placeholder="Documentary, Ad, Promo, etc." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" data-en="Message" data-es="Mensaje">Message</label>
+                        <textarea class="form-textarea" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <p data-en="Let's create something extraordinary together." data-es="Creemos algo extraordinario juntos.">Let's create something extraordinary together.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEO MODAL (Popup that plays videos when you click a project) -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-container">
+            <button class="close-modal" id="closeModal">✕</button>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
