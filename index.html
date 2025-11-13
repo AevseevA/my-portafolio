@@ -38,69 +38,329 @@
     <!-- MAIN CONTENT AREA -->
     <div class="content">
         
-        <!-- ========== LANDING PAGE ========== -->
-        <div id="landing" class="page active">
-            <div class="landing">
-                <div class="film-strip top"></div>
-                <div class="hero-text">
-                    <h1 class="hero-title">THE CUTTING ROOM</h1>
-                    <p class="hero-subtitle" data-en="Video Editor & Visual Storyteller" data-es="Editor de Video & Narrador Visual">Video Editor & Visual Storyteller</p>
-                    <div class="reel-counter">[ REEL: 001 | FRAME: INFINITE ]</div>
-                </div>
-                <div class="film-strip bottom"></div>
-            </div>
-        </div>
+ <!-- ==========================================
+     LANDING PAGE (Updated)
+     Interactive name and reel line
+     ========================================== -->
+<div id="landing" class="page active">
+    <div class="landing-content">
+        
+        <!-- Film strip decorations (keep your existing film strips if you have them) -->
+        
+        <!-- Website Title -->
+        <h1 class="hero-title" data-en="The Cutting Room" data-es="La Sala de Edición">
+            The Cutting Room
+        </h1>
+        
+        <!-- Clickable Name (goes to About) -->
+        <button class="hero-name" onclick="navigateToAbout()" aria-label="Go to About page">
+            <span data-en="ANTÓN RIVERA" data-es="ANTÓN RIVERA">ANTÓN RIVERA</span>
+        </button>
+        
+        <!-- Subtitle (not clickable) -->
+        <p class="hero-subtitle" data-en="Video Editor" data-es="Editor de Video">
+            Video Editor
+        </p>
+        
+        <!-- Clickable Reel/Frame Line (goes to Projects) -->
+        <button class="hero-reel" onclick="navigateToProjects()" aria-label="Go to Projects page">
+            <span data-en="[ REEL: 001 | FRAME: INFINITE ]" data-es="[ CARRETE: 001 | FOTOGRAMA: INFINITO ]">
+                [ REEL: 001 | FRAME: INFINITE ]
+            </span>
+        </button>
+        
+        <!-- Enter Archive Button (keep if you want, or remove) -->
+        <!-- <button class="enter-btn" onclick="navigateToProjects()">
+            <span data-en="Enter Archive" data-es="Entrar al Archivo">Enter Archive</span>
+        </button> -->
+        
+    </div>
+</div>
 
-        <!-- ========== PROJECTS PAGE ========== -->
+<!-- Navigation Helper Script -->
+<script>
+function navigateToAbout() {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    
+    // Show about page
+    document.getElementById('about').classList.add('active');
+    
+    // Update menu active state
+    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+    const aboutMenuItem = document.querySelector('.menu-item[data-page="about"]');
+    if (aboutMenuItem) {
+        aboutMenuItem.classList.add('active');
+    }
+}
+
+function navigateToProjects() {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    
+    // Show projects page
+    document.getElementById('projects').classList.add('active');
+    
+    // Update menu active state
+    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+    const projectsMenuItem = document.querySelector('.menu-item[data-page="projects"]');
+    if (projectsMenuItem) {
+        projectsMenuItem.classList.add('active');
+    }
+    
+    // Reset to archive view
+    if (typeof renderProjects === 'function') {
+        renderProjects('archive');
+    }
+}
+</script>
+<!-- ========== PROJECTS PAGE ========== -->
         <div id="projects" class="page">
             <div class="projects-container">
                 <h2 class="section-title" data-en="Archive" data-es="Archivo">Archive</h2>
                 
-                <!-- Category Filter Buttons -->
-                <div class="category-filter">
-                    <button class="filter-btn active" data-filter="all" data-en="All Projects" data-es="Todos los Proyectos">All Projects</button>
-                    <button class="filter-btn" data-filter="documentary" data-en="Documentaries" data-es="Documentales">Documentaries</button>
-                    <button class="filter-btn" data-filter="ad" data-en="Ads" data-es="Spots">Ads</button>
-                    <button class="filter-btn" data-filter="promo" data-en="Promos" data-es="Promos">Promos</button>
-                    <button class="filter-btn" data-filter="short" data-en="Short Films" data-es="Cortometrajes">Short Films</button>
+                <!-- Category Cards (Initial View) -->
+                <div class="category-cards" id="categoryCards">
+                    <div class="category-card" data-category="promos">
+                        <div class="category-overlay">
+                            <div class="category-icon">🎬</div>
+                            <h3 class="category-name" data-en="Promos" data-es="Promos">Promos</h3>
+                            <p class="category-count" data-en="20 Projects" data-es="20 Proyectos">20 Projects</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="category-card" data-category="ad">
+                        <div class="category-overlay">
+                            <div class="category-icon">📺</div>
+                            <h3 class="category-name" data-en="Spots" data-es="Spots">Spots</h3>
+                            <p class="category-count" data-en="16 Project" data-es="16 Proyectos">16 Project</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="documentary">
+                        <div class="category-overlay">
+                            <div class="category-icon">📽️</div>
+                            <h3 class="category-name" data-en="Documentaries" data-es="Documentales">Documentaries</h3>
+                            <p class="category-count" data-en="1 Projects" data-es="1 Proyectos">1 Projects</p>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-category="short">
+                        <div class="category-overlay">
+                            <div class="category-icon">🎞️</div>
+                            <h3 class="category-name" data-en="Shorts" data-es="Cortometrajes">Shorts</h3>
+                            <p class="category-count" data-en="0 Projects" data-es="0 Proyectos">0 Projects</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Projects Grid (Filled by JavaScript) -->
+                <!-- Back to Archive Button (Hidden initially) -->
+                <button class="back-to-archive" id="backToArchive" style="display: none;">
+                    <span class="back-icon">←</span>
+                    <span data-en="Back to Archive" data-es="Volver al Archivo">Back to Archive</span>
+                </button>
+
+                <!-- Brand Selection (Split Screen) - Hidden initially -->
+                <div class="brand-selector" id="brandSelector" style="display: none;">
+                    <div class="brand-card axn-brand" data-brand="axn">
+                        <div class="brand-overlay">
+                            <h3 class="brand-title">AXN</h3>
+                            <p class="brand-count" data-en="8 Projects" data-es="8 Proyectos">8 Projects</p>
+                            <div class="brand-arrow">→</div>
+                        </div>
+                    </div>
+                    <div class="brand-card sony-brand" data-brand="sony">
+                        <div class="brand-overlay">
+                            <h3 class="brand-title">SONY</h3>
+                            <p class="brand-count" data-en="12 Projects" data-es="12 Proyectos">12 Projects</p>
+                            <div class="brand-arrow">→</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collapsed Brand Sidebar (Left) -->
+                <div class="brand-sidebar left" id="leftSidebar" style="display: none;">
+                    <div class="sidebar-content">
+                        <div class="sidebar-brand-name"></div>
+                        <div class="sidebar-project-count"></div>
+                        <div class="sidebar-arrow">→</div>
+                    </div>
+                </div>
+
+                <!-- Collapsed Brand Sidebar (Right) -->
+                <div class="brand-sidebar right" id="rightSidebar" style="display: none;">
+                    <div class="sidebar-content">
+                        <div class="sidebar-brand-name"></div>
+                        <div class="sidebar-project-count"></div>
+                        <div class="sidebar-arrow">←</div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
                 <div class="projects-grid" id="projectsGrid"></div>
             </div>
         </div>
 
-        <!-- ========== ABOUT PAGE ========== -->
-        <div id="about" class="page">
-            <div class="about-container">
-                <h2 class="section-title" data-en="The Editor" data-es="El Editor">The Editor</h2>
+<!-- ==========================================
+     ABOUT PAGE - NEW VERSION
+     ========================================== -->
+<div id="about" class="page">
+    <div class="about-container-new">
+        
+        <!-- Main Grid: Text Left, Image + Cards Right -->
+        <div class="about-grid">
+            
+            <!-- LEFT COLUMN: Header + Value Prop + CTAs + Bullets -->
+            <div class="about-left">
                 
-                <div class="about-content">
-                    <!-- About Text -->
-                    <div class="about-text">
-                        <p data-en="Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives." data-es="Welcome to the cutting room. Aquí es donde las historias se tallan plano a plano y el material en bruto se convierte en narrativa que funciona.">Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives.</p>
-                        
-                        <p data-en="With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content." data-es="Con 9 años editando, doy vida a historias que van del documental al contenido comercial de alto ritmo.">With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content.</p>
-                        
-                        <p data-en="I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams." data-es="Hago que promos, spots y piezas documentales funcionen en on-air, VOD y social (16:9 · 1:1 · 9:16) con entrega broadcast y deadlines cumplidos. Trabajo con brief claro, organización de media y checklist de QC para que el master llegue a la primera, sosteniendo paquetes mensuales con retrabajos mínimos y coordinación fluida con creativos, tráfico y post.">I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams.</p>
-
-                        <p data-en="Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote)." data-es="Crédito reciente: promos y episodios de franquicias de TV y spots para marcas globales. Disponible en Madrid (presencial, híbrido o remoto).">Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote).</p>
-                    </div>
+                <!-- Header -->
+                <h1 class="about-h1" data-en="ANTÓN RIVERA" data-es="ANTÓN RIVERA">
+                    ANTÓN RIVERA
+                </h1>
+                
+                <!-- Value Proposition -->
+                <h2 class="about-h2" data-en="Editor & colorist delivering broadcast-ready promos, spots and docs." data-es="Editor y colorista que entrega piezas listas para emisión en TV, VOD y social.">
+                    Editor & colorist delivering broadcast-ready promos, spots and docs.
+                </h2>
+                
+                <!-- CTAs -->
+                <div class="about-ctas">
+                    <button class="cta-primary" onclick="navigateToProjects()" data-en="View Projects" data-es="Ver Proyectos">
+                        <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        View Projects
+                    </button>
+                    <button class="cta-secondary" onclick="navigateToContact()" data-en="Get In Touch" data-es="Contacto">
+                        <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Get In Touch
+                    </button>
+                </div>
+                
+                <!-- Bio Text (Paragraph Format) -->
+                <div class="about-bio">
+                    <p data-en="Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives." data-es="Bienvenido a la sala de edición. Aquí es donde las historias se crean cuadro a cuadro, donde el material bruto se transforma en narrativas convincentes.">
+                        Welcome to the cutting room. This is where stories are crafted frame by frame, where raw footage transforms into compelling narratives.
+                    </p>
                     
-                    <!-- Skills Box -->
-                    <div class="skills-box">
-                        <h3 class="skills-title" data-en="Technical Arsenal" data-es="Arsenal Técnico">Technical Arsenal</h3>
-                        <div class="skill-item">Adobe Premiere Pro</div>
-                        <div class="skill-item">DaVinci Resolve</div>
-                        <div class="skill-item">After Effects</div>
-                        <div class="skill-item">Final Cut Pro</div>
-                        <div class="skill-item" data-en="Color Grading" data-es="Corrección de Color">Color Grading</div>
-                        <div class="skill-item" data-en="Sound Design" data-es="Diseño de Sonido">Sound Design</div>
+                    <p data-en="With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content." data-es="Con 9 años de experiencia en edición, doy vida a historias en múltiples géneros, desde documentales hasta contenido comercial de alta energía.">
+                        With 9 years of editing experience, I bring stories to life across multiple genres—from documentaries to high-energy commercial content.
+                    </p>
+                    
+                    <p data-en="I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams." data-es="Entrego promos, comerciales y piezas documentales para emisión, VOD y redes sociales (16:9 · 1:1 · 9:16) con calidad de transmisión y plazos cumplidos. Trabajo con briefs claros, gestión organizada de medios y listas de control de calidad para asegurar que los másters sean aprobados en la primera entrega, manteniendo paquetes mensuales con mínimas revisiones y coordinación fluida con creativos, tráfico y equipos de post-producción.">
+                        I deliver promos, commercials and documentary pieces for on-air, VOD and social media (16:9 · 1:1 · 9:16) with broadcast-quality delivery and met deadlines. I work with clear briefs, organized media management and QC checklists to ensure masters are approved on first submission, maintaining monthly packages with minimal revisions and smooth coordination with creatives, traffic and post-production teams.
+                    </p>
+                    
+                    <p data-en="Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote)." data-es="Créditos recientes: promos y episodios para franquicias de TV y comerciales para marcas globales. Disponible en Madrid (presencial, híbrido o remoto).">
+                        Recent credits: promos and episodes for TV franchises and commercials for global brands. Available in Madrid (in-person, hybrid or remote).
+                    </p>
+                </div>
+                
+            </div>
+            
+            <!-- RIGHT COLUMN: Portrait + Services + Tools + Credits -->
+            <div class="about-right">
+                
+                <!-- Portrait Photo -->
+                <div class="about-portrait">
+                    <img src="images/anton-rivera.jpg" alt="Antón Rivera in studio, headphones—editor & colorist">
+                    <div class="portrait-overlay"></div>
+                    <div class="portrait-vignette"></div>
+                </div>
+                
+                <!-- Services Card -->
+                <div class="about-card">
+                    <h3 class="card-title" data-en="Services" data-es="Servicios">Services</h3>
+                    <div class="chip-container">
+                        <span class="chip" data-en="Story and Comercial Editing" data-es="Edición narrativa y comercial">Story and Comercial Editing</span>
+                        <span class="chip" data-en="Promos, trailers & cutdowns" data-es="Promos, trailers y cutdowns">Promos, trailers & cutdowns</span>
+                        <span class="chip" data-en="Versioning & social adaptations" data-es="Versionado y adaptaciones para redes">Versioning & social adaptations</span>
+                        <span class="chip" data-en="Titles, supers & light graphics" data-es="Títulos, supers y gráficas ligeras">Titles, supers & light graphics</span>
+                        <span class="chip" data-en="Sound polish" data-es="Pulido de audio">Sound polish</span>
+                        <span class="chip" data-en="Basic color balancing" data-es="Etalonaje básico">Basic color balancing</span>
+                        <span class="chip" data-en="Subtitles & accessibility" data-es="Subtítulos y accesibilidad">Subtitles & accessibility</span>
+                        <span class="chip" data-en="Delivery & mastering" data-es="Entregas y masterización">Delivery & mastering</span>
+                        <span class="chip" data-en="Motion graphics" data-es="Motion graphics">Motion graphics</span>
                     </div>
                 </div>
+                
+                <!-- Tools Card -->
+                <div class="about-card">
+                    <h3 class="card-title" data-en="Tools" data-es="Herramientas">Tools</h3>
+                    <div class="chip-container">
+                        <span class="chip" data-en="Premiere Pro" data-es="Premiere Pro">Premiere Pro</span>
+                        <span class="chip" data-en="DaVinci Resolve" data-es="DaVinci Resolve">DaVinci Resolve</span>
+                        <span class="chip" data-en="After Effects" data-es="After Effects">After Effects</span>
+                        <span class="chip" data-en="Avid Media Composer" data-es="Avid Media Composer">Avid Media Composer</span>
+                        <span class="chip" data-en="Final Cut Pro" data-es="Final Cut Pro">Final Cut Pro</span>
+                        <span class="chip" data-en="Illustrator" data-es="Illustrator">Illustrator</span>
+                    </div>
+                </div>
+                
+                <!-- Recent Credits Card -->
+                <div class="about-card credits-card">
+                    <div class="credits-header">
+                        <h3 class="card-title" data-en="Recent Credits" data-es="Créditos Recientes">Recent Credits</h3>
+                        <button class="credits-link" onclick="navigateToProjects()" data-en="View Projects →" data-es="Ver Proyectos →">View Projects →</button>
+                    </div>
+                    <div class="client-logos">
+                        <img src="images/logos/samsung.png" alt="Samsung" class="client-logo">
+                        <img src="images/logos/sony.png" alt="Sony" class="client-logo">
+                        <img src="images/logos/axn.png" alt="AXN" class="client-logo">
+                    </div>
+                    <div class="credits-text">
+                        <p class="credit-item" data-en="AXN — Promo series (8 spots)" data-es="AXN — Serie de promos (8 spots)">AXN — Promo series (8 spots)</p>
+                        <p class="credit-item" data-en="Samsung — Product campaigns (9 spots)" data-es="Samsung — Campañas de producto (9 spots)">Samsung — Product campaigns (9 spots)</p>
+                        <p class="credit-item" data-en="Sony — TV franchises (12 episodes)" data-es="Sony — Franquicias de TV (12 episodios)">Sony — TV franchises (12 episodes)</p>
+                    </div>
+                </div>
+                
             </div>
+            
         </div>
+        
+    </div>
+</div>
 
+<!-- Navigation Helper Functions -->
+<script>
+function navigateToProjects() {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    
+    // Show projects page
+    document.getElementById('projects').classList.add('active');
+    
+    // Update menu active state
+    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+    const projectsMenuItem = document.querySelector('.menu-item[data-page="projects"]');
+    if (projectsMenuItem) {
+        projectsMenuItem.classList.add('active');
+    }
+    
+    // Reset to archive view
+    renderProjects('archive');
+}
+
+function navigateToContact() {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    
+    // Show contact page
+    document.getElementById('contact').classList.add('active');
+    
+    // Update menu active state
+    document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+    const contactMenuItem = document.querySelector('.menu-item[data-page="contact"]');
+    if (contactMenuItem) {
+        contactMenuItem.classList.add('active');
+    }
+}
+</script>
         <!-- ========== CONTACT PAGE ========== -->
         <div id="contact" class="page">
             <div class="contact-container">

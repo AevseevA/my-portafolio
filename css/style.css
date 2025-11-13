@@ -163,62 +163,323 @@ body::before {
 }
 
 /* ==========================================
-   LANDING PAGE
+   LANDING PAGE (Updated)
+   Interactive hero with accessible focus states
    ========================================== */
-.landing {
-    height: 100vh;
+
+.landing-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 100%);
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1.5rem; /* Consistent vertical spacing */
+    padding: 2rem;
 }
 
-.film-strip {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    background: repeating-linear-gradient(
-        90deg,
-        #1a1a1a 0px,
-        #1a1a1a 20px,
-        #0d0d0d 20px,
-        #0d0d0d 25px
-    );
-    border-top: 2px solid #ff6b35;
-    border-bottom: 2px solid #ff6b35;
+/* ==========================================
+   HERO TITLE - "The Cutting Room"
+   ========================================== */
+
+.hero-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 300;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin: 0 0 2rem 0;
+    font-family: 'Courier New', monospace;
+    opacity: 0.8;
 }
 
-.film-strip.top { top: 10%; }
-.film-strip.bottom { bottom: 10%; }
+/* ==========================================
+   HERO NAME (Clickable, goes to About)
+   ========================================== */
 
-.hero-text {
-    text-align: center;
-    z-index: 2;
+.hero-name {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Cyan glow on hover */
+.hero-name:hover {
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.5),
+        0 0 60px rgba(0, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Cyan outline on focus (accessibility) */
+.hero-name:focus {
+    outline: none;
+}
+
+.hero-name:focus-visible {
+    outline: 3px solid rgba(0, 255, 255, 0.8);
+    outline-offset: 8px;
+    border-radius: 4px;
+}
+
+/* Active state */
+.hero-name:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   HERO SUBTITLE (Not clickable)
+   ========================================== */
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* ==========================================
+   HERO REEL LINE (Clickable, goes to Projects)
+   ========================================== */
+
+.hero-reel {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    font-weight: 400;
+    color: var(--orange);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.15em;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 
+        0 0 8px rgba(255, 107, 53, 0.3);
+}
+
+/* Orange glow on hover */
+.hero-reel:hover {
+    text-shadow: 
+        0 0 15px rgba(255, 107, 53, 0.8),
+        0 0 30px rgba(255, 107, 53, 0.5),
+        0 0 45px rgba(255, 107, 53, 0.3);
+    transform: translateY(-2px);
+    color: rgba(255, 107, 53, 1);
+}
+
+/* Orange outline on focus (accessibility) */
+.hero-reel:focus {
+    outline: none;
+}
+
+.hero-reel:focus-visible {
+    outline: 3px solid rgba(255, 107, 53, 0.8);
+    outline-offset: 6px;
+    border-radius: 4px;
+}
+
+/* Active state */
+.hero-reel:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   VISUAL HIERARCHY & SPACING
+   ========================================== */
+
+/* Create clear visual hierarchy */
+.landing-content > * {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
 }
 
 .hero-title {
-    font-size: 72px;
-    font-weight: bold;
-    color: #00d9ff;
-    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
-    margin-bottom: 20px;
-    letter-spacing: 8px;
+    animation-delay: 0.1s;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem); /* Small, subtle */
+}
+
+.hero-name {
+    animation-delay: 0.3s;
+    font-size: clamp(3rem, 8vw, 6rem); /* Largest */
 }
 
 .hero-subtitle {
-    font-size: 24px;
-    color: #ff6b35;
-    letter-spacing: 4px;
-    margin-bottom: 40px;
+    animation-delay: 0.5s;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Medium */
+    margin-top: 0.5rem;
 }
 
-.reel-counter {
-    font-size: 18px;
-    color: #888;
-    font-family: 'Courier New', monospace;
-    letter-spacing: 2px;
+.hero-reel {
+    animation-delay: 0.7s;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem); /* Smallest */
+    margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==========================================
+   OPTIONAL: ENTER ARCHIVE BUTTON
+   (If you want to keep it)
+   ========================================== */
+
+.enter-btn {
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    background: rgba(0, 255, 255, 0.9);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.enter-btn:hover {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.enter-btn:focus-visible {
+    outline: 3px solid rgba(0, 255, 255, 0.8);
+    outline-offset: 4px;
+}
+
+.enter-btn:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+    .landing-content {
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .hero-name {
+        letter-spacing: 0.15em;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .hero-subtitle {
+        letter-spacing: 0.2em;
+    }
+    
+    .hero-reel {
+        letter-spacing: 0.1em;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-content {
+        gap: 0.75rem;
+    }
+    
+    .hero-name {
+        letter-spacing: 0.1em;
+    }
+    
+    .hero-subtitle {
+        letter-spacing: 0.15em;
+    }
+    
+    .hero-reel {
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ========================================== */
+
+/* Ensure focus is always visible */
+.hero-name:focus-visible,
+.hero-reel:focus-visible,
+.enter-btn:focus-visible {
+    outline-style: solid;
+    outline-width: 3px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .hero-name,
+    .hero-reel,
+    .enter-btn {
+        transition: none;
+    }
+    
+    .hero-name:hover,
+    .hero-reel:hover,
+    .enter-btn:hover {
+        transform: none;
+    }
+    
+    .landing-content > * {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hero-name:focus-visible {
+        outline-width: 4px;
+    }
+    
+    .hero-reel:focus-visible {
+        outline-width: 4px;
+    }
+}
+
+/* ==========================================
+   PROJECT CARD ANIMATIONS
+   ========================================== */
+@keyframes cardWaterfall {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-100px);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05) translateY(10px);
+    }
+    70% {
+        transform: scale(0.95) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 /* ==========================================
@@ -236,6 +497,9 @@ body::before {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    text-align: center;
+    margin-top: 40px; /* Add space above */
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5); /* Glow effect */
 }
 
 /* Category Filter Buttons */
@@ -282,7 +546,25 @@ body::before {
     transition: all 0.4s;
     position: relative;
     display: block;
+    
+    /* Add waterfall animation */
+    opacity: 0;
+    animation: cardWaterfall 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* Stagger animation delay for each card */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.15s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.25s; }
+.project-card:nth-child(5) { animation-delay: 0.3s; }
+.project-card:nth-child(6) { animation-delay: 0.35s; }
+.project-card:nth-child(7) { animation-delay: 0.4s; }
+.project-card:nth-child(8) { animation-delay: 0.45s; }
+.project-card:nth-child(9) { animation-delay: 0.5s; }
+.project-card:nth-child(10) { animation-delay: 0.55s; }
+.project-card:nth-child(11) { animation-delay: 0.6s; }
+.project-card:nth-child(12) { animation-delay: 0.65s; }
 
 /* Scan line effect on hover */
 .project-card::before {
@@ -298,6 +580,12 @@ body::before {
 
 .project-card:hover::before {
     left: 100%;
+}
+
+.project-card:hover {
+    border-color: #00d9ff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
 }
 
 .project-card:hover {
@@ -446,51 +734,551 @@ body::before {
 }
 
 /* ==========================================
-   ABOUT PAGE
+   ABOUT PAGE - NEW VERSION
+   12-column grid, chips, CTAs, accessibility
    ========================================== */
-.about-container {
-    padding: 80px 100px;
+
+.about-container-new {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 100px 80px 80px;
 }
 
-.about-content {
+/* 12-Column Grid Layout */
+.about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     gap: 60px;
-    margin-top: 40px;
+    align-items: start;
 }
 
-.about-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #b0b0b0;
+/* Left Column: spans cols 1-7 */
+.about-left {
+    grid-column: 1 / 8;
 }
 
-.about-text p {
-    margin-bottom: 20px;
+/* Right Column: spans cols 8-12 */
+.about-right {
+    grid-column: 8 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 80px;
 }
 
-.skills-box {
-    background: #1a1a1a;
-    border: 2px solid #ff6b35;
-    padding: 30px;
-}
+/* ==========================================
+   HEADER & VALUE PROP
+   ========================================== */
 
-.skills-title {
-    font-size: 24px;
-    color: #00d9ff;
-    margin-bottom: 20px;
+.about-h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--cyan);
     text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.4),
+        0 0 30px rgba(0, 255, 255, 0.2);
+    transition: text-shadow 0.3s ease;
 }
 
-.skill-item {
-    margin-bottom: 15px;
-    padding: 10px;
-    background: rgba(255, 107, 53, 0.05);
-    border-left: 3px solid #ff6b35;
+.about-h1:hover {
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.3);
 }
 
+.about-h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #D8D8D8;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 70ch;
+}
+
+/* ==========================================
+   CTAs (Primary & Secondary Buttons)
+   ========================================== */
+
+.about-ctas {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Primary CTA (Cyan) */
+.cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    border-radius: 0.75rem;
+    background: rgba(0, 255, 255, 0.9);
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.cta-primary:hover {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.cta-primary:focus-visible {
+    outline: 2px solid rgba(0, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+/* Secondary CTA (Orange Border) */
+.cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 107, 53, 0.7);
+    background: transparent;
+    color: #FFB399;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 1);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.cta-secondary:focus-visible {
+    outline: 2px solid rgba(255, 107, 53, 0.8);
+    outline-offset: 2px;
+}
+
+.cta-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================
+   BIO TEXT (Paragraph Format)
+   ========================================== */
+
+.about-bio {
+    max-width: 70ch;
+}
+
+.about-bio p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #D8D8D8;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+/* ==========================================
+   PORTRAIT PHOTO
+   ========================================== */
+
+.about-portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 2px solid var(--cyan);
+    background: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.about-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: grayscale(10%) contrast(1.05);
+}
+
+/* Subtle vignette on hover */
+.portrait-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.about-portrait:hover .portrait-vignette {
+    opacity: 1;
+}
+
+.about-portrait:hover img {
+    transform: scale(1.03);
+}
+
+/* Scan line overlay (lightweight) */
+.portrait-overlay {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.02),
+        rgba(0, 255, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(30px); }
+}
+
+/* Corner accents */
+.about-portrait::before,
+.about-portrait::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--orange);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.about-portrait::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.about-portrait::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+.about-portrait:hover::before,
+.about-portrait:hover::after {
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+}
+
+/* ==========================================
+   CARDS (Services, Tools, Credits)
+   ========================================== */
+
+.about-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    border-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 25px rgba(0, 255, 255, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 0.5rem;
+}
+
+/* ==========================================
+   CHIPS (Pills for Services & Tools)
+   ========================================== */
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+    border-radius: 9999px;
+    background: rgba(30, 30, 30, 0.7);
+    border: 1px solid rgba(115, 115, 115, 0.6);
+    color: #D8D8D8;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.chip:hover {
+    border-color: rgba(0, 255, 255, 0.6);
+    background: rgba(0, 255, 255, 0.05);
+    transform: translateY(-1px);
+}
+
+.chip:focus-visible {
+    outline: 2px solid rgba(0, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   RECENT CREDITS CARD
+   ========================================== */
+
+.credits-card {
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.credits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.credits-link {
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.credits-link:hover {
+    color: rgba(0, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.credits-link:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Client Logos */
+.client-logos {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.client-logo {
+    height: 40px;
+    width: auto;
+    filter: grayscale(100%) brightness(0.7);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Credits Text */
+.credits-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.credit-item {
+    font-size: 0.9rem;
+    color: #B0B0B0;
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+}
+
+/* ==========================================
+   SCROLL ANIMATIONS (Lightweight)
+   ========================================== */
+
+.about-left > *,
+.about-right > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.about-left > *:nth-child(1) { animation-delay: 0.1s; }
+.about-left > *:nth-child(2) { animation-delay: 0.2s; }
+.about-left > *:nth-child(3) { animation-delay: 0.3s; }
+.about-left > *:nth-child(4) { animation-delay: 0.4s; }
+
+.about-right > *:nth-child(1) { animation-delay: 0.2s; }
+.about-right > *:nth-child(2) { animation-delay: 0.3s; }
+.about-right > *:nth-child(3) { animation-delay: 0.4s; }
+.about-right > *:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   MOBILE & RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .about-container-new {
+        padding: 80px 60px 60px;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .about-left,
+    .about-right {
+        grid-column: 1 / -1;
+    }
+    
+    .about-right {
+        position: static;
+    }
+    
+    .about-h1 {
+        font-size: 3rem;
+    }
+    
+    .about-h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container-new {
+        padding: 60px 30px 40px;
+    }
+    
+    .about-grid {
+        gap: 40px;
+    }
+    
+    .about-h1 {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .about-h2 {
+        font-size: 1.2rem;
+    }
+    
+    .about-ctas {
+        flex-direction: column;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+    
+    .about-bullets li {
+        font-size: 1rem;
+    }
+    
+    .about-portrait {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .chip {
+        min-height: 44px;
+        padding: 0.65rem 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container-new {
+        padding: 40px 20px 30px;
+    }
+    
+    .about-h1 {
+        font-size: 2rem;
+    }
+    
+    .client-logos {
+        gap: 1rem;
+    }
+    
+    .client-logo {
+        height: 30px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ========================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast */
+.about-bullets li,
+.about-h2,
+.credit-item {
+    color: #D8D8D8; /* WCAG AA compliant on dark background */
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 /* ==========================================
    CONTACT PAGE
    ========================================== */
@@ -567,7 +1355,627 @@ body::before {
     text-align: center;
     color: #888;
 }
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    opacity: 0.5;
+}
 
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.empty-text {
+    font-size: 18px;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   CATEGORY CARDS (Archive View)
+   ========================================== */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.category-card {
+    height: 350px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid #333;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card:hover {
+    border-color: #00d9ff;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.4);
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.category-card:hover .category-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.category-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+
+.category-card:hover .category-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.category-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.category-card:hover .category-name {
+    color: #00d9ff;
+}
+
+.category-count {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Animate category cards on load */
+.category-card {
+    opacity: 0;
+    animation: cardWaterfall 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.category-card:nth-child(1) { animation-delay: 0.1s; }
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.3s; }
+.category-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive for smaller screens */
+@media (max-width: 1200px) {
+    .category-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   BACK TO ARCHIVE BUTTON
+   ========================================== */
+.back-to-archive {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.back-to-archive:hover {
+    background: #ff6b35;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.back-icon {
+    font-size: 20px;
+}
+
+/* ==========================================
+   BACK TO ARCHIVE BUTTON
+   ========================================== */
+.back-to-archive {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.back-to-archive:hover {
+    background: #ff6b35;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.back-icon {
+    font-size: 20px;
+}
+
+/* ==========================================
+   BRAND SELECTOR (Split Screen)
+   ========================================== */
+.brand-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.brand-card {
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* AXN Brand Styling (RED/ORANGE) */
+.axn-brand {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 100%);
+    border-color: #ff6b35;
+}
+
+.axn-brand:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+}
+
+.axn-brand .brand-title {
+    color: #ff6b35;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+}
+
+/* Sony Brand Styling (CYAN/BLUE) */
+.sony-brand {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    border-color: #00d9ff;
+}
+
+.sony-brand:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.4);
+}
+
+.sony-brand .brand-title {
+    color: #00d9ff;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
+}
+
+/* Brand Overlay Content */
+.brand-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.brand-card:hover .brand-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.brand-title {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+}
+
+.brand-count {
+    font-size: 18px;
+    color: #888;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.brand-arrow {
+    font-size: 48px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s;
+}
+
+.brand-card:hover .brand-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================
+   COLLAPSED BRAND SIDEBARS
+   ========================================== */
+.brand-sidebar {
+    position: fixed;
+    top: 200px; /* Add margin from top - adjust this number to position below back button */
+    width: 100px;
+    height: calc(100vh - 200px); /* Adjust height to account for top margin */
+    z-index: 998;
+    cursor: pointer;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Show animation */
+.brand-sidebar.show {
+    opacity: 1;
+}
+
+.brand-sidebar.left {
+    left: -100px; /* Start off-screen */
+}
+
+.brand-sidebar.left.show {
+    left: 60px; /* Slide to position next to main sidebar */
+}
+
+.brand-sidebar.right {
+    right: -100px; /* Start off-screen */
+}
+
+.brand-sidebar.right.show {
+    right: 0; /* Slide to position */
+}
+
+/* AXN Sidebar Styling (RED/ORANGE) */
+.brand-sidebar.axn {
+    background: linear-gradient(180deg, #1a0a0a 0%, #2e1a1a 100%);
+    border-color: #ff6b35;
+}
+
+.brand-sidebar.axn:hover {
+    width: 120px;
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+}
+
+.brand-sidebar.axn .sidebar-brand-name {
+    color: #ff6b35;
+}
+
+.brand-sidebar.axn .sidebar-arrow {
+    color: #ff6b35;
+}
+
+/* Sony Sidebar Styling (CYAN/BLUE) */
+.brand-sidebar.sony {
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+    border-color: #00d9ff;
+}
+
+.brand-sidebar.sony:hover {
+    width: 120px;
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+}
+
+.brand-sidebar.sony .sidebar-brand-name {
+    color: #00d9ff;
+}
+
+.brand-sidebar.sony .sidebar-arrow {
+    color: #00d9ff;
+}
+
+/* Sidebar Content - Text at TOP, not sideways */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 15px;
+    height: 100%;
+}
+
+.sidebar-brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    writing-mode: horizontal-tb; /* Normal horizontal text */
+    text-align: center;
+}
+
+.sidebar-project-count {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1px;
+    writing-mode: horizontal-tb;
+    text-align: center;
+}
+
+.sidebar-arrow {
+    font-size: 32px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.brand-sidebar:hover .sidebar-arrow {
+    opacity: 1;
+}
+
+/* Adjust projects grid when sidebars are visible */
+.projects-grid.with-left-sidebar {
+    margin-left: 100px;
+    transition: margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-grid.with-right-sidebar {
+    margin-right: 100px;
+    transition: margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   AD BRAND CARDS (Samsung, Sony, Hotels)
+   ========================================== */
+.ad-brand-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.ad-brand-card {
+    height: 400px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation: cardWaterfall 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.ad-brand-card:nth-child(1) { animation-delay: 0.1s; }
+.ad-brand-card:nth-child(2) { animation-delay: 0.2s; }
+.ad-brand-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Samsung Brand Colors */
+.ad-brand-card.samsung {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+    border-color: #1428F5;
+}
+
+.ad-brand-card.samsung:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(20, 40, 245, 0.4);
+}
+
+.ad-brand-card.samsung .ad-brand-title {
+    color: #1428F5;
+    text-shadow: 0 0 30px rgba(20, 40, 245, 0.8);
+}
+
+/* Sony Brand Colors */
+.ad-brand-card.sony {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    border-color: #00d9ff;
+}
+
+.ad-brand-card.sony:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.4);
+}
+
+.ad-brand-card.sony .ad-brand-title {
+    color: #00d9ff;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
+}
+
+/* Hotels Brand Colors */
+.ad-brand-card.hotels {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 100%);
+    border-color: #ff6b35;
+}
+
+.ad-brand-card.hotels:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+}
+
+.ad-brand-card.hotels .ad-brand-title {
+    color: #ff6b35;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+}
+
+/* Brand Card Scan Line */
+.ad-brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.ad-brand-card:hover::before {
+    left: 100%;
+}
+
+.ad-brand-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.ad-brand-card:hover .ad-brand-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ad-brand-title {
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.ad-brand-count {
+    font-size: 16px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   VERSION SELECTOR (Dropdown)
+   ========================================== */
+.project-versions {
+    padding: 15px;
+    background: rgba(0, 217, 255, 0.05);
+    border-top: 2px solid #00d9ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.version-label {
+    font-size: 12px;
+    color: #00d9ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.version-select {
+    flex: 1;
+    padding: 8px 12px;
+    background: #0d0d0d;
+    border: 2px solid #333;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.version-select:hover,
+.version-select:focus {
+    outline: none;
+    border-color: #00d9ff;
+}
+
+.version-select option {
+    background: #0d0d0d;
+    color: #e0e0e0;
+}
+
+/* ==========================================
+   BACK BUTTON (To return to brand selection)
+   ========================================== */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.back-button:hover {
+    background: #ff6b35;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 20px;
+}
 /* ==========================================
    RESPONSIVE DESIGN (Mobile & Tablet)
    ========================================== */
