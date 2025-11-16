@@ -57,11 +57,11 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-Promo_AXN_ .png',
                 versions: [
-                    { duration: '45s', file: 'videos/promos/AXN/AXN Promo/Promo_AXN_45s .mp4' },
-                    { duration: '40s', file: 'videos/promos/AXN/AXN Promo/Promo_AXN_40s .mp4' },
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Promo/Promo_AXN_30s .mp4' },
-                    { duration: '20s', file: 'videos/promos/AXN/AXN Promo/Promo_AXN_20s .mp4' },
-                    { duration: '15s', file: 'videos/promos/AXN/AXN Promo/Promo_AXN_15s .mp4' }
+                    { duration: '45s', file: 'Videos/promos/AXN/AXN Promo/Promo_AXN_45s .mp4' },
+                    { duration: '40s', file: 'Videos/promos/AXN/AXN Promo/Promo_AXN_40s .mp4' },
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Promo/Promo_AXN_30s .mp4' },
+                    { duration: '20s', file: 'Videos/promos/AXN/AXN Promo/Promo_AXN_20s .mp4' },
+                    { duration: '15s', file: 'Videos/promos/AXN/AXN Promo/Promo_AXN_15s .mp4' }
                 ]
             },
             {
@@ -72,8 +72,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-A_CINE_GNST_OCT21_.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Movies/A_CINE_GNST_OCT21_30s.mp4' },
-                    { duration: '20s', file: 'videos/promos/AXN/AXN Movies/A_CINE_GNST_OCT21_20s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Movies/A_CINE_GNST_OCT21_30s.mp4' },
+                    { duration: '20s', file: 'Videos/promos/AXN/AXN Movies/A_CINE_GNST_OCT21_20s.mp4' }
                 ]
             },
             {
@@ -84,8 +84,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-A_CINE_CAP_CLOVERFIELD_INV_.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Cloverfield/A_CINE_CAP_CLOVERFIELD_INV_30s.mp4' },
-                    { duration: '15s', file: 'videos/promos/AXN/AXN Cloverfield/A_CINE_CAP_CLOVERFIELD_INV_15s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Cloverfield/A_CINE_CAP_CLOVERFIELD_INV_30s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/AXN/AXN Cloverfield/A_CINE_CAP_CLOVERFIELD_INV_15s.mp4' }
                 ]
             },
             {
@@ -96,11 +96,11 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-A_PROG_GNST_EVERGREEN_.png',
                 versions: [
-                    { duration: '45s', file: 'videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_45s.mp4' },
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_30s.mp4' },
-                    { duration: '25s', file: 'videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_25s.mp4' },
-                    { duration: '20s', file: 'videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_20s.mp4' },
-                    { duration: '15s', file: 'videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_15s.mp4' }
+                    { duration: '45s', file: 'Videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_45s.mp4' },
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_30s.mp4' },
+                    { duration: '25s', file: 'Videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_25s.mp4' },
+                    { duration: '20s', file: 'Videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_20s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/AXN/AXN Evergreen/A_PROG_GNST_EVERGREEN_15s.mp4' }
                 ]
             },
             {
@@ -111,8 +111,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-A_CINE_GNST_NOV21_.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Movies 2/A_CINE_GNST_NOV21_30s.mp4' },
-                    { duration: '20s', file: 'videos/promos/AXN/AXN Movies 2/A_CINE_GNST_NOV21_20s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Movies 2/A_CINE_GNST_NOV21_30s.mp4' },
+                    { duration: '20s', file: 'Videos/promos/AXN/AXN Movies 2/A_CINE_GNST_NOV21_20s.mp4' }
                 ]
             },
             {
@@ -123,8 +123,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/AXN/thumb-A_CINE_CAP_HALLOWEEN_30_ALL.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/AXN/AXN Saw/A_CINE_CAP_HALLOWEEN_30_ALL.mp4' },
-                    { duration: '20s', file: 'videos/promos/AXN/AXN Saw/A_CINE_CAP_HALLOWEEN_15_ALL.mp4' }
+                    { duration: '30s', file: 'Videos/promos/AXN/AXN Saw/A_CINE_CAP_HALLOWEEN_30_ALL.mp4' },
+                    { duration: '20s', file: 'Videos/promos/AXN/AXN Saw/A_CINE_CAP_HALLOWEEN_15_ALL.mp4' }
                 ]
             },
             {
@@ -135,10 +135,10 @@ const projects = {
                 icon: '📺',
                 thumbnail: 'images/promos/AXN/thumb-A_CANREN4.png',
                 versions: [
-                    { duration: 'All Promo', file: 'videos/promos/AXN/Canidce Renoir/All/A_CANREN4_GNST_MRTN_SAB_SEP21_ALL.mp4' },
-                    { duration: 'Episode 3', file: 'videos/promos/AXN/Canidce Renoir/Episode3/A_CANREN4_CAP_3_ALL.mp4' },
-                    { duration: 'Episode 4', file: 'videos/promos/AXN/Canidce Renoir/Episode4/A_CANREN4_CAP_4_ALL.mp4' },
-                    { duration: 'Episode 5', file: 'videos/promos/AXN/Canidce Renoir/Episode5/A_CANREN4_CAP_5_ALL.mp4' }
+                    { duration: 'All Promo', file: 'Videos/promos/AXN/Canidce Renoir/All/A_CANREN4_GNST_MRTN_SAB_SEP21_ALL.mp4' },
+                    { duration: 'Episode 3', file: 'Videos/promos/AXN/Canidce Renoir/Episode3/A_CANREN4_CAP_3_ALL.mp4' },
+                    { duration: 'Episode 4', file: 'Videos/promos/AXN/Canidce Renoir/Episode4/A_CANREN4_CAP_4_ALL.mp4' },
+                    { duration: 'Episode 5', file: 'Videos/promos/AXN/Canidce Renoir/Episode5/A_CANREN4_CAP_5_ALL.mp4' }
                 ]
             },
             {
@@ -149,8 +149,8 @@ const projects = {
                 icon: '📺',
                 thumbnail: 'images/promos/AXN/thumb-A_SEALT.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/AXN/Seal team/A_SEALT_30s.mp4' },
-                    { duration: '15s', file: 'videos/promos/AXN/Seal team/A_SEALT_15s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/AXN/Seal team/A_SEALT_30s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/AXN/Seal team/A_SEALT_15s.mp4' }
                 ]
             }
          ],
@@ -164,11 +164,11 @@ const projects = {
                 icon: '📺',
                 thumbnail: 'images/promos/Sony/thum-Promo_Sony.png',
                 versions: [
-                    { duration: '45s', file: 'videos/promos/Sony/Sony Promo/Promo_Sony_45s.mp4' },
-                    { duration: '40s', file: 'videos/promos/Sony/Sony Promo/Promo_Sony_40s.mp4' },
-                    { duration: '30s', file: 'videos/promos/Sony/Sony Promo/Promo_Sony_30s.mp4' },
-                    { duration: '20s', file: 'videos/promos/Sony/Sony Promo/Promo_Sony_20s.mp4' },
-                    { duration: '15s', file: 'videos/promos/Sony/Sony Promo/Promo_Sony_15s.mp4' }
+                    { duration: '45s', file: 'Videos/promos/Sony/Sony Promo/Promo_Sony_45s.mp4' },
+                    { duration: '40s', file: 'Videos/promos/Sony/Sony Promo/Promo_Sony_40s.mp4' },
+                    { duration: '30s', file: 'Videos/promos/Sony/Sony Promo/Promo_Sony_30s.mp4' },
+                    { duration: '20s', file: 'Videos/promos/Sony/Sony Promo/Promo_Sony_20s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/Sony/Sony Promo/Promo_Sony_15s.mp4' }
                 ]
             },
             {
@@ -179,7 +179,7 @@ const projects = {
                 icon: '🥋',
                 thumbnail: 'images/promos/Sony/thumb-S_MOVS_CAP_CINTURON_NEGRO_ALL.png',
                 versions: [
-                    { duration: 'Full', file: 'videos/promos/Sony/Especial Cinturon Negro/S_MOVS_CAP_CINTURON_NEGRO_ALL.mp4' }
+                    { duration: 'Full', file: 'Videos/promos/Sony/Especial Cinturon Negro/S_MOVS_CAP_CINTURON_NEGRO_ALL.mp4' }
                 ]
             },
             {
@@ -190,11 +190,11 @@ const projects = {
                 icon: '🦈',
                 thumbnail: 'images/promos/Sony/thumb-S_SKTCO4.png',
                 versions: [
-                    { duration: 'Best Of S1E2', file: 'videos/promos/Sony/Shark Tank COL/Best Of/S_BSTCOL1_CAP_2.mp4' },
-                    { duration: 'S4 Promo 30s', file: 'videos/promos/Sony/Shark Tank COL/Season4/S_SKTCO4_MNT_SEPOCT_30s.mp4' },
-                    { duration: 'S4 Promo 15s', file: 'videos/promos/Sony/Shark Tank COL/Season4/S_SKTCO4_MNT_SEPOCT_15s.mp4' },
-                    { duration: 'Episode 9', file: 'videos/promos/Sony/Shark Tank COL/Episode9/S_SKTCO4_CAP_9.mp4' },
-                    { duration: 'Episode 10', file: 'videos/promos/Sony/Shark Tank COL/Episode10/S_SKTCO4_CAP_10.mp4' }
+                    { duration: 'Best Of S1E2', file: 'Videos/promos/Sony/Shark Tank COL/Best Of/S_BSTCOL1_CAP_2.mp4' },
+                    { duration: 'S4 Promo 30s', file: 'Videos/promos/Sony/Shark Tank COL/Season4/S_SKTCO4_MNT_SEPOCT_30s.mp4' },
+                    { duration: 'S4 Promo 15s', file: 'Videos/promos/Sony/Shark Tank COL/Season4/S_SKTCO4_MNT_SEPOCT_15s.mp4' },
+                    { duration: 'Episode 9', file: 'Videos/promos/Sony/Shark Tank COL/Episode9/S_SKTCO4_CAP_9.mp4' },
+                    { duration: 'Episode 10', file: 'Videos/promos/Sony/Shark Tank COL/Episode10/S_SKTCO4_CAP_10.mp4' }
                 ]
             },
             {
@@ -205,9 +205,9 @@ const projects = {
                 icon: '🦈',
                 thumbnail: 'images/promos/Sony/thumb-S_SKTMX6_MNT_AGOOCT.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_30s_MEX.mp4' },
-                    { duration: '20s', file: 'videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_20s_MEX.mp4' },
-                    { duration: '15s', file: 'videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_15s_MEX.mp4' }
+                    { duration: '30s', file: 'Videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_30s_MEX.mp4' },
+                    { duration: '20s', file: 'Videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_20s_MEX.mp4' },
+                    { duration: '15s', file: 'Videos/promos/Sony/Shark Tank MX/S_SKTMX6_MNT_AGOOCT_15s_MEX.mp4' }
                 ]
             },
             {
@@ -218,8 +218,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/Sony/thumb-S_MOVS_GNST.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/Sony/Sony Movies/S_MOVS_GNST_OCT21_30s.mp4' },
-                    { duration: '15s', file: 'videos/promos/Sony/Sony Movies/S_MOVS_GNST_OCT21_15s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/Sony/Sony Movies/S_MOVS_GNST_OCT21_30s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/Sony/Sony Movies/S_MOVS_GNST_OCT21_15s.mp4' }
                 ]
             },
             {
@@ -230,8 +230,8 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/Sony/thumb-S_MOVS_GNST_.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/Sony/Sony Movies 2/S_MOVS_GNST_NOV21_30s.mp4' },
-                    { duration: '15s', file: 'videos/promos/Sony/Sony Movies 2/S_MOVS_GNST_NOV21_15s.mp4' }
+                    { duration: '30s', file: 'Videos/promos/Sony/Sony Movies 2/S_MOVS_GNST_NOV21_30s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/Sony/Sony Movies 2/S_MOVS_GNST_NOV21_15s.mp4' }
                 ]
             },
             
@@ -243,11 +243,11 @@ const projects = {
                 icon: '📺',
                 thumbnail: 'images/promos/Sony/thumb-Promo_Sony2.png',
                 versions: [
-                    { duration: '45s', file: 'videos/promos/Sony/Sony Promo 2/Promo_Sony_45s.mp4' },
-                    { duration: '40s', file: 'videos/promos/Sony/Sony Promo 2/Promo_Sony_40s.mp4' },
-                    { duration: '30s', file: 'videos/promos/Sony/Sony Promo 2/Promo_Sony_30s.mp4' },
-                    { duration: '20s', file: 'videos/promos/Sony/Sony Promo 2/Promo_Sony_20s.mp4' },
-                    { duration: '15s', file: 'videos/promos/Sony/Sony Promo 2/Promo_Sony_15s.mp4' }
+                    { duration: '45s', file: 'Videos/promos/Sony/Sony Promo 2/Promo_Sony_45s.mp4' },
+                    { duration: '40s', file: 'Videos/promos/Sony/Sony Promo 2/Promo_Sony_40s.mp4' },
+                    { duration: '30s', file: 'Videos/promos/Sony/Sony Promo 2/Promo_Sony_30s.mp4' },
+                    { duration: '20s', file: 'Videos/promos/Sony/Sony Promo 2/Promo_Sony_20s.mp4' },
+                    { duration: '15s', file: 'Videos/promos/Sony/Sony Promo 2/Promo_Sony_15s.mp4' }
                 ]
             },
             {
@@ -258,7 +258,7 @@ const projects = {
                 icon: '🎬',
                 thumbnail: 'images/promos/Sony/thumb-S_SONY MOVIES - VENOm.png',
                 versions: [
-                    { duration: 'Full', file: 'videos/promos/Sony/Sony Venom/S_SONY MOVIES - VENOM.mp4' }
+                    { duration: 'Full', file: 'Videos/promos/Sony/Sony Venom/S_SONY MOVIES - VENOM.mp4' }
                 ]
             },
             {
@@ -269,7 +269,7 @@ const projects = {
                 icon: '📺',
                 thumbnail: 'images/promos/Sony/thumb-S_MOVIES VOD.png',
                 versions: [
-                    { duration: 'Full', file: 'videos/promos/Sony/Sony VOD/S_MOVIES VOD.mp4' }
+                    { duration: 'Full', file: 'Videos/promos/Sony/Sony VOD/S_MOVIES VOD.mp4' }
                 ]
             },
             {
@@ -280,7 +280,7 @@ const projects = {
                 icon: '⚡',
                 thumbnail: 'images/promos/Sony/thumb-Electric Dreams Ep4.png',
                 versions: [
-                    { duration: 'Episode 4', file: 'videos/promos/Sony/Electric Dreams/Electric Dreams Ep4.mp4' }
+                    { duration: 'Episode 4', file: 'Videos/promos/Sony/Electric Dreams/Electric Dreams Ep4.mp4' }
                 ]
             },
             {
@@ -291,8 +291,8 @@ const projects = {
                 icon: '🌙',
                 thumbnail: 'images/promos/Sony/thumb-S_NIGHT SHIFT.png',
                 versions: [
-                    { duration: '30s', file: 'videos/promos/Sony/The Night Shift/S_NIGHT SHIFT S04 - 30.mp4' },
-                    { duration: '20s', file: 'videos/promos/Sony/The Night Shift/S_NIGHT SHIFT S04 - 20.mp4' }
+                    { duration: '30s', file: 'Videos/promos/Sony/The Night Shift/S_NIGHT SHIFT S04 - 30.mp4' },
+                    { duration: '20s', file: 'Videos/promos/Sony/The Night Shift/S_NIGHT SHIFT S04 - 20.mp4' }
                 ]
             }
         ]
@@ -316,7 +316,7 @@ const projects = {
             titleEs: 'Calle Resistencia', 
             category: 'documentary', 
             icon: '🌊',
-            videoFile: 'videos/documentaries/calle-resistencia.mp4',
+            videoFile: 'Videos/documentaries/calle-resistencia.mp4',
             thumbnail: 'images/documentaries/calle-resistencia.png'
         }
     ], 
@@ -335,11 +335,11 @@ const projects = {
             icon: '🍔',
             thumbnail: 'images/ads/Samsung/S20/Food/thumb-food.png',
             versions: [
-                { duration: '45s', file: 'videos/ads/Samsung/S20/Food/Capsula-Food_45s.mp4' },
-                { duration: '15s Presentation Horiz', file: 'videos/ads/Samsung/S20/Food/Presentation_15s Horizontal.mp4' },
-                { duration: '15s Vertical', file: 'videos/ads/Samsung/S20/Food/Capsula_Food_15s Vertical.mp4' },
-                { duration: '15s Horizontal', file: 'videos/ads/Samsung/S20/Food/Capsula_Food_15s Horizontal.mp4' },
-                { duration: '5s', file: 'videos/ads/Samsung/S20/Food/Capsula_Food_5s.mp4' }
+                { duration: '45s', file: 'Videos/ads/Samsung/S20/Food/Capsula-Food_45s.mp4' },
+                { duration: '15s Presentation Horiz', file: 'Videos/ads/Samsung/S20/Food/Presentation_15s Horizontal.mp4' },
+                { duration: '15s Vertical', file: 'Videos/ads/Samsung/S20/Food/Capsula_Food_15s Vertical.mp4' },
+                { duration: '15s Horizontal', file: 'Videos/ads/Samsung/S20/Food/Capsula_Food_15s Horizontal.mp4' },
+                { duration: '5s', file: 'Videos/ads/Samsung/S20/Food/Capsula_Food_5s.mp4' }
             ]
         },
         
@@ -353,13 +353,13 @@ const projects = {
             icon: '🌿',
             thumbnail: 'images/ads/Samsung/S20/Nature/thumb-nature.png',
             versions: [
-                { duration: '50s Mobile', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_50s(Mobile).mp4' },
-                { duration: '45s', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_45s-.mp4' },
-                { duration: '15s Vertical', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_15s V_Final.mp4' },
-                { duration: '15s Horizontal', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_15s H_Final.mp4' },
-                { duration: '15s Cuadrado', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_15s C_FINAL.mp4' },
-                { duration: '6s', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_6s.mp4' },
-                { duration: '5s', file: 'videos/ads/Samsung/S20/Nature/Capsula_Nature_5s_Final.mp4' }
+                { duration: '50s Mobile', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_50s(Mobile).mp4' },
+                { duration: '45s', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_45s-.mp4' },
+                { duration: '15s Vertical', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_15s V_Final.mp4' },
+                { duration: '15s Horizontal', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_15s H_Final.mp4' },
+                { duration: '15s Cuadrado', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_15s C_FINAL.mp4' },
+                { duration: '6s', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_6s.mp4' },
+                { duration: '5s', file: 'Videos/ads/Samsung/S20/Nature/Capsula_Nature_5s_Final.mp4' }
             ]
         },
         
@@ -373,11 +373,11 @@ const projects = {
             icon: '🎬',
             thumbnail: 'images/ads/Samsung/S20/Making_Off/thumb-making-off.png',
             versions: [
-                { duration: '30s', file: 'videos/ads/Samsung/S20/Making Off/Making Off 30s_Master Final.mp4' },
-                { duration: '15s Horizontal', file: 'videos/ads/Samsung/S20/Making Off/Making Off_15sH_Master.mp4' },
-                { duration: '15s', file: 'videos/ads/Samsung/S20/Making Off/Making Off_15s_Master.mp4' },
-                { duration: '6s', file: 'videos/ads/Samsung/S20/Making Off/Making Off_6S_Master.mp4' },
-                { duration: '5s', file: 'videos/ads/Samsung/S20/Making Off/Making Off_5s_Master.mp4' }
+                { duration: '30s', file: 'Videos/ads/Samsung/S20/Making Off/Making Off 30s_Master Final.mp4' },
+                { duration: '15s Horizontal', file: 'Videos/ads/Samsung/S20/Making Off/Making Off_15sH_Master.mp4' },
+                { duration: '15s', file: 'Videos/ads/Samsung/S20/Making Off/Making Off_15s_Master.mp4' },
+                { duration: '6s', file: 'Videos/ads/Samsung/S20/Making Off/Making Off_6S_Master.mp4' },
+                { duration: '5s', file: 'Videos/ads/Samsung/S20/Making Off/Making Off_5s_Master.mp4' }
             ]
         },
         
@@ -391,11 +391,11 @@ const projects = {
             icon: '⭐',
             thumbnail: 'images/ads/Samsung/S20/Spot_Final/thumb-spot-final.png',
             versions: [
-                { duration: 'Master', file: 'videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_Master(H264_Alta).mp4' },
-                { duration: '15s Vertical', file: 'videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_15S_(Vertical)_Master.mp4' },
-                { duration: '15s Horizontal', file: 'videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_15S_(Horizontal)_Master.mp4' },
-                { duration: '6s', file: 'videos/ads/Samsung/S20/Spot Final/SPOT_FINAL 6s.mp4' },
-                { duration: '5s', file: 'videos/ads/Samsung/S20/Spot Final/SPOT_FINAL5s.mp4' }
+                { duration: 'Master', file: 'Videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_Master(H264_Alta).mp4' },
+                { duration: '15s Vertical', file: 'Videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_15S_(Vertical)_Master.mp4' },
+                { duration: '15s Horizontal', file: 'Videos/ads/Samsung/S20/Spot Final/SPOT_FINAL_15S_(Horizontal)_Master.mp4' },
+                { duration: '6s', file: 'Videos/ads/Samsung/S20/Spot Final/SPOT_FINAL 6s.mp4' },
+                { duration: '5s', file: 'Videos/ads/Samsung/S20/Spot Final/SPOT_FINAL5s.mp4' }
             ]
         },
         
@@ -409,7 +409,7 @@ const projects = {
             icon: '📺',
             thumbnail: 'images/ads/Samsung/TV/QLED_8K/thumb-qled8k.png',
             versions: [
-                { duration: 'Full', file: 'videos/ads/Samsung/TV/QLED 8K/Samsung_QLED8K.mp4' }
+                { duration: 'Full', file: 'Videos/ads/Samsung/TV/QLED 8K/Samsung_QLED8K.mp4' }
             ]
         },
         
@@ -423,7 +423,7 @@ const projects = {
             icon: '📺',
             thumbnail: 'images/ads/Samsung/TV/QLED_4K/thumb-qled4k.png',
             versions: [
-                { duration: 'Full', file: 'videos/ads/Samsung/TV/QLED 4K/Samsung_QLED4K.mp4' }
+                { duration: 'Full', file: 'Videos/ads/Samsung/TV/QLED 4K/Samsung_QLED4K.mp4' }
             ]
         },
         
@@ -437,7 +437,7 @@ const projects = {
             icon: '📺',
             thumbnail: 'images/ads/Samsung/TV/General/thumb-general.png',
             versions: [
-                { duration: '30s', file: 'videos/ads/Samsung/TV/General/Samsung_General_30s.mp4' }
+                { duration: '30s', file: 'Videos/ads/Samsung/TV/General/Samsung_General_30s.mp4' }
             ]
         },
         
@@ -451,7 +451,7 @@ const projects = {
             icon: '💎',
             thumbnail: 'images/ads/Samsung/TV/Crystal_UHD/thumb-UHD.png',
             versions: [
-                { duration: '15s', file: 'videos/ads/Samsung/TV/Crystal UHD/15s_UHD-Crystal.mp4' }
+                { duration: '15s', file: 'Videos/ads/Samsung/TV/Crystal UHD/15s_UHD-Crystal.mp4' }
             ]
         },
         
@@ -465,7 +465,7 @@ const projects = {
             icon: '📱',
             thumbnail: 'images/ads/Samsung/Flip/thumb-z-flip.png',
             versions: [
-                { duration: '60s', file: 'videos/ads/Samsung/Flip/SamsungZFlip_60s.mp4' }
+                { duration: '60s', file: 'Videos/ads/Samsung/Flip/SamsungZFlip_60s.mp4' }
             ]
         },
         
@@ -481,7 +481,7 @@ const projects = {
             icon: '🦈',
             thumbnail: 'images/ads/Sony/thumb-HouseSpoon.png',
             versions: [
-                { duration: 'Full', file: 'videos/ads/Sony/Sony HouseSpoon - Shark Tank.mp4' }
+                { duration: 'Full', file: 'Videos/ads/Sony/Sony HouseSpoon - Shark Tank.mp4' }
             ]
         },
         
@@ -495,7 +495,7 @@ const projects = {
             icon: '🦈',
             thumbnail: 'images/ads/Sony/thumb-cartonmade.png',
             versions: [
-                { duration: 'Full', file: 'videos/ads/Sony/Sony Carton Made - Shark Tank.mp4' }
+                { duration: 'Full', file: 'Videos/ads/Sony/Sony Carton Made - Shark Tank.mp4' }
             ]
         },
         
@@ -509,7 +509,7 @@ const projects = {
             icon: '📰',
             thumbnail: 'images/ads/Sony/Lo_Ultimo/thumb-lo-ultimo.png',
             versions: [
-                { duration: 'Full', file: 'videos/ads/Lo Ultimo/Lo_Ultimo.mp4' }
+                { duration: 'Full', file: 'Videos/ads/Lo Ultimo/Lo_Ultimo.mp4' }
             ]
         },
         
@@ -523,9 +523,9 @@ const projects = {
             icon: '🧪',
             thumbnail: 'images/ads/Sony/Didilab/thumb-didilab.png',
             versions: [
-                { duration: 'Ep2', file: 'videos/ads/Didilab/Didilab_E2_Reducción_Marzo17.mp4' },
-                { duration: 'Ep4', file: 'videos/ads/Didilab/DIDI_ANDES_DIDI LAB_RED_CAP4_SKTCO_S.mp4' },
-                { duration: 'Ep6', file: 'videos/ads/Didilab/DIDI_ANDES_DIDI LAB_RED_CAP6_SKTCO_S.mp4' }
+                { duration: 'Ep2', file: 'Videos/ads/Didilab/Didilab_E2_Reducción_Marzo17.mp4' },
+                { duration: 'Ep4', file: 'Videos/ads/Didilab/DIDI_ANDES_DIDI LAB_RED_CAP4_SKTCO_S.mp4' },
+                { duration: 'Ep6', file: 'Videos/ads/Didilab/DIDI_ANDES_DIDI LAB_RED_CAP6_SKTCO_S.mp4' }
             ]
         },
         
@@ -543,9 +543,9 @@ const projects = {
             icon: '♨️',
             thumbnail: 'images/ads/termales-el-otoño/thumb-termales-el-otoño.png',
             versions: [
-                { duration: '2 Min', file: 'videos/ads/Termales El Otoño/TDO_2m_Baja_2.mp4' },
-                { duration: '15s', file: 'videos/ads/Termales El Otoño/Presidencial_10s_Baja.mp4' },
-                { duration: 'Full', file: 'videos/ads/Termales El Otoño/Experiencia_VIP_baja.mp4' }
+                { duration: '2 Min', file: 'Videos/ads/Termales El Otoño/TDO_2m_Baja_2.mp4' },
+                { duration: '15s', file: 'Videos/ads/Termales El Otoño/Presidencial_10s_Baja.mp4' },
+                { duration: 'Full', file: 'Videos/ads/Termales El Otoño/Experiencia_VIP_baja.mp4' }
             ]
         }
     ],
