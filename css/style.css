@@ -713,7 +713,7 @@ body::before {
 
 .close-modal {
     position: absolute;
-    top: -50px;
+    top: 0px;
     right: 0;
     background: #ff6b35;
     border: none;
@@ -725,12 +725,135 @@ body::before {
     font-family: 'Courier New', monospace;
     font-weight: bold;
     transition: all 0.3s;
-    z-index: 10002;
+    z-index: 10;
+    border-radius: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .close-modal:hover {
     background: #00d9ff;
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1); /* Rotates and grows */
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+}
+
+.close-modal:active {
+    transform: rotate(90deg) scale(0.95); /* Pressed effect */
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .video-container {
+        width: 92%;
+        max-width: 900px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    /* Close button - bigger and easier to tap */
+    .close-modal {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        top: 0px;
+        right: 0px;
+        border-radius: 0;
+    }
+    
+    /* Video container - prevent overflow */
+    .video-container {
+        width: 95%;
+        max-height: 85vh;
+        padding: 10px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Video player - limit size */
+    .video-container video {
+        max-height: 70vh;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    /* Side menu - adjust for mobile */
+    .side-menu {
+        width: 50px;
+    }
+    
+    .side-menu:hover {
+        width: 200px;
+    }
+    
+    /* Content area - adjust for smaller side menu */
+    .content {
+        margin-left: 50px;
+    }
+    
+    /* Language toggle - smaller on mobile */
+    .language-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .lang-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    /* Even bigger close button for small screens */
+    .close-modal {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+        top: 0;
+        right: 0;
+    }
+    
+    /* Video container adjustments */
+    .video-container {
+        width: 98%;
+        max-height: 80vh;
+        padding: 5px;
+    }
+    
+    /* Video player - smaller for tiny screens */
+    .video-container video {
+        max-height: 65vh;
+    }
+    
+    /* Projects grid - single column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Category cards - single column */
+    .category-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Side menu even smaller */
+    .side-menu {
+        width: 45px;
+    }
+    
+    .content {
+        margin-left: 45px;
+    }
 }
 
 /* ==========================================
