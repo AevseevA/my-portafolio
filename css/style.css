@@ -2150,8 +2150,9 @@ body::before {
         width: 60px;
     }
     
+    /* Disable hover expansion on mobile */
     .side-menu:hover {
-        width: 200px;
+        width: 60px;
     }
     
     .menu-item {
@@ -2164,6 +2165,13 @@ body::before {
     
     .menu-text {
         font-size: 14px;
+        opacity: 0;
+        display: none;
+    }
+    
+    .side-menu:hover .menu-text {
+        opacity: 0;
+        display: none;
     }
     
     .content {
