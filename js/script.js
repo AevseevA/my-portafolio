@@ -1269,16 +1269,8 @@ document.querySelectorAll('.menu-item').forEach(item => {
 /* ==========================================
    CONTACT FORM SUBMISSION
    ========================================== */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const message = currentLang === 'es' 
-        ? '¡Mensaje enviado! (Esto es una demo - conecta a tu backend para manejar envíos)'
-        : 'Message sent! (This is a demo - connect to your backend to handle submissions)';
-    
-    alert(message);
-    this.reset(); // Clear form
-});
+// Form is now handled by Formspree - no JavaScript needed!
+// Formspree will show a confirmation page after submission.
 
 /* ==========================================
    INITIALIZE PAGE
