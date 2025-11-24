@@ -541,7 +541,7 @@ const projects = {
             brand: 'hotels',
             campaign: 'Termales 2 Min',
             icon: '♨️',
-            thumbnail: 'images/ads/termales-el-otoño/thumb-termales-el-otoño.png',
+            thumbnail: 'images/ads/termales-el-otono/thumb-termales-el-otono.png',
             versions: [
                 { duration: '2 Min', file: 'Videos/ads/Termales El Otoño/TDO_2m_Baja_2.mp4' },
                 { duration: '15s', file: 'Videos/ads/Termales El Otoño/Presidencial_10s_Baja.mp4' },
