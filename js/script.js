@@ -479,7 +479,7 @@ const projects = {
             brand: 'sony',
             campaign: 'Shark Tank HouseSpoon',
             icon: '🦈',
-            thumbnail: 'images/ads/Sony/thumb-HouseSpoon.png',
+            thumbnail: 'images/ads/sony/thumb-HouseSpoon.png',
             versions: [
                 { duration: 'Full', file: 'Videos/ads/Sony/Sony HouseSpoon - Shark Tank.mp4' }
             ]
@@ -493,7 +493,7 @@ const projects = {
             brand: 'sony',
             campaign: 'Shark Tank Carton Made',
             icon: '🦈',
-            thumbnail: 'images/ads/Sony/thumb-cartonmade.png',
+            thumbnail: 'images/ads/sony/thumb-cartonmade.png',
             versions: [
                 { duration: 'Full', file: 'Videos/ads/Sony/Sony Carton Made - Shark Tank.mp4' }
             ]
@@ -507,7 +507,7 @@ const projects = {
             brand: 'sony',
             campaign: 'Lo Último',
             icon: '📰',
-            thumbnail: 'images/ads/Sony/Lo_Ultimo/thumb-lo-ultimo.png',
+            thumbnail: 'images/ads/sony/Lo_Ultimo/thumb-lo-ultimo.png',
             versions: [
                 { duration: 'Full', file: 'Videos/ads/Lo Ultimo/Lo_Ultimo.mp4' }
             ]
@@ -521,7 +521,7 @@ const projects = {
             brand: 'sony',
             campaign: 'Didilab Reducción',
             icon: '🧪',
-            thumbnail: 'images/ads/Sony/Didilab/thumb-didilab.png',
+            thumbnail: 'images/ads/sony/Didilab/thumb-didilab.png',
             versions: [
                 { duration: 'Ep2', file: 'Videos/ads/Didilab/Didilab_E2_Reducción_Marzo17.mp4' },
                 { duration: 'Ep4', file: 'Videos/ads/Didilab/DIDI_ANDES_DIDI LAB_RED_CAP4_SKTCO_S.mp4' },
@@ -541,7 +541,7 @@ const projects = {
             brand: 'hotels',
             campaign: 'Termales 2 Min',
             icon: '♨️',
-            thumbnail: 'images/ads/termales-el-otoño/thumb-termales-el-otoño.png',
+            thumbnail: 'images/ads/termales-el-otoño/thumb-termales-el-otoño.png',
             versions: [
                 { duration: '2 Min', file: 'Videos/ads/Termales El Otoño/TDO_2m_Baja_2.mp4' },
                 { duration: '15s', file: 'Videos/ads/Termales El Otoño/Presidencial_10s_Baja.mp4' },
